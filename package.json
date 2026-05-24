@@ -1,6 +1,6 @@
 {
   "name": "payloadtoon",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Token-efficient JSON-to-TOON compression middleware and CLI for AI applications, with Gemini optional for AI analysis.",
   "type": "commonjs",
   "main": "dist/index.js",
