@@ -1,0 +1,41 @@
+[
+  {
+    "timestamp": "2026-05-24T10:15:30Z",
+    "level": "INFO",
+    "service": "api-gateway",
+    "message": "Request completed",
+    "duration_ms": 42,
+    "status": 200,
+    "path": "/api/users"
+  },
+  {
+    "timestamp": "2026-05-24T10:15:31Z",
+    "level": "WARN",
+    "service": "auth-service",
+    "message": "Token expiring soon",
+    "user_id": "u_789",
+    "expires_in": 300
+  },
+  {
+    "timestamp": "2026-05-24T10:15:32Z",
+    "level": "ERROR",
+    "service": "payment-worker",
+    "message": "Stripe webhook signature mismatch",
+    "event_id": "evt_abc123"
+  },
+  {
+    "timestamp": "2026-05-24T10:15:33Z",
+    "level": "INFO",
+    "service": "db-proxy",
+    "message": "Query executed",
+    "query_time_ms": 8,
+    "rows": 42
+  },
+  {
+    "timestamp": "2026-05-24T10:15:34Z",
+    "level": "DEBUG",
+    "service": "cache-layer",
+    "message": "Cache miss",
+    "key": "user:123:profile"
+  }
+]
