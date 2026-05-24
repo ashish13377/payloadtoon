@@ -1,0 +1,29 @@
+{
+  "userQuery": "Summarize server errors and flag critical IDs.",
+  "documentContext": [
+    {
+      "serverId": "svr_01",
+      "endpoint": "/auth",
+      "status": 200,
+      "latencyMs": 42,
+      "user": { "id": 101, "role": "admin" },
+      "tags": ["auth", "stable"]
+    },
+    {
+      "serverId": "svr_02",
+      "endpoint": "/payout",
+      "status": 500,
+      "latencyMs": 932,
+      "user": { "id": 102, "role": "operator" },
+      "tags": ["payments", "critical"]
+    },
+    {
+      "serverId": "svr_03",
+      "endpoint": "/webhook",
+      "status": 500,
+      "latencyMs": 881,
+      "user": { "id": 103, "role": "system" },
+      "tags": ["webhook", "retry"]
+    }
+  ]
+}

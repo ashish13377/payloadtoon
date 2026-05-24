@@ -1,0 +1,81 @@
+{
+  "name": "payloadtoon",
+  "version": "1.0.0",
+  "description": "Token-efficient JSON-to-TOON compression middleware and CLI for AI applications, with Gemini optional for AI analysis.",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "payloadtoon": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "scripts": {
+    "dev": "tsx watch src/cli.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/cli.js",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
+    "pack:check": "npm pack --dry-run",
+    "dev:once": "tsx src/cli.ts",
+    "serve": "node dist/cli.js",
+    "test:manual": "tsx scripts/manual-client.ts",
+    "test:context": "tsx scripts/manual-context-client.ts"
+  },
+  "keywords": [
+    "gemini",
+    "genai",
+    "middleware",
+    "toon",
+    "prompt-optimization",
+    "token-optimization",
+    "express",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^1.17.0",
+    "compression": "^1.7.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "gpt-tokenizer": "^3.4.0",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0",
+    "redis": "^5.8.2",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.5"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.13.1",
+    "eslint": "^9.20.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "packageManager": "yarn@1.22.22"
+}
