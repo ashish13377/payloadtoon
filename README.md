@@ -14,7 +14,127 @@ PayloadTOON is a TypeScript npm package, CLI, API server, and developer dashboar
 
 [![npm version](https://badge.fury.io/js/payloadtoon.svg)](https://www.npmjs.com/package/payloadtoon)
 
-It helps reduce:
+```bash
+npm install payloadtoon
+```
+
+or:
+
+```bash
+yarn add payloadtoon
+```
+
+---
+
+## 🚀 Quick Start Examples
+
+Get up and running in under 2 minutes with these real-world examples.
+
+### 1. Local Compression (no API key needed)
+
+Compress a JSON file with a single command:
+
+```bash
+# Clone the repo and try with sample data
+git clone https://github.com/ashish13377/payloadtoon.git
+cd payloadtoon
+yarn install
+
+# Compress the server logs sample
+payloadtoon compress ./examples/server-logs.json --pretty
+```
+
+**What you get:**
+
+```text
+Format: [serverId | endpoint | status | region]
+────────────────────────────────────────────────
+svr_01 | /auth/login     | 200 | us-east
+svr_02 | /payments/payout | 500 | us-west
+
+📊 2 rows compressed
+💰 ~68% estimated token savings
+```
+
+### 2. Gemini-Powered Analysis
+
+Add your Gemini API key for AI analysis:
+
+```bash
+# Set your API key
+export GEMINI_API_KEY="your_key_here"
+
+# Start the API server
+yarn dev
+
+# In another terminal, send a query
+curl -X POST http://localhost:3000/api/v1/analyze \
+  -H "Content-Type: application/json" \
+  -d '{
+    "documents": '$(cat examples/server-logs.json)',
+    "userQuery": "Which endpoints are returning errors?"
+  }'
+```
+
+### 3. Using Saved Templates
+
+Save frequently used query+payload combinations:
+
+```bash
+# Save a template (requires API server running)
+curl -X POST http://localhost:3000/api/v1/saved-payloads \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Error Log Analysis",
+    "userQuery": "Find all errors and summarize root causes.",
+    "documentContext": '$(cat examples/server-logs.json)'
+  }'
+
+# List saved templates
+curl http://localhost:3000/api/v1/saved-payloads
+
+# Enable persistent storage across restarts
+export FILE_STORE_ENABLED=true
+export FILE_STORE_PATH=./data/saved_payloads.json
+```
+
+### 4. Dashboard Walkthrough
+
+```bash
+# Start the dashboard (separate terminal)
+cd examples/next-dashboard
+yarn install
+yarn dev -p 3001
+```
+
+Open **http://localhost:3001** and you'll see:
+
+1. **Input Panel** — paste your JSON and write a natural language query
+2. **TOON Preview** — see the compressed format in real time
+3. **Token Analytics** — raw vs optimized token counts with savings %
+4. **AI Response** — Gemini's analysis of your data
+5. **History Chart** — cumulative savings over time
+6. **Saved Templates** — load previously saved query+data combos
+7. **Backend Status** — connection health indicator with recovery screen
+
+### 5. Programmatic Usage (npm package)
+
+```typescript
+import { compressToTOON } from 'payloadtoon';
+
+const data = [
+  { serverId: "svr_01", status: 200, region: "us-east" },
+  { serverId: "svr_02", status: 500, region: "us-west" },
+];
+
+const result = await compressToTOON(data, { pretty: true });
+console.log(result.toonString);
+console.log(`Tokens saved: ${result.savingsPercent}%`);
+```
+
+---
+
+## 💡 Why PayloadTOON?
 
 - 💸 LLM input tokens
 - 🔁 repeated JSON structure
@@ -286,20 +406,6 @@ POST /api/v1/toon/compress
 ```
 
 The frontend reloads ledger stats immediately after local compression succeeds, so the chart bars render in real time. 📈
-
----
-
-## 📦 Installation
-
-```bash
-npm install payloadtoon
-```
-
-or:
-
-```bash
-yarn add payloadtoon
-```
 
 ---
 
