@@ -1,5 +1,11 @@
 # PayloadTOON 🚀
 
+<div align="center" >
+  <img src="https://res.cloudinary.com/diyncva2v/image/upload/v1779620880/clouxaekmyq5m6mdh1jr.png" target="_blank" alt="Ezhire App" style="max-width: 50%; height: 350px; border-radius: 15px;" />
+</div>
+
+---
+
 **Compress JSON before AI sees it.** ⚡
 
 PayloadTOON is a TypeScript npm package, CLI, API server, and developer dashboard that converts large JSON payloads into compact, schema-aware TOON format before sending data to AI models.
