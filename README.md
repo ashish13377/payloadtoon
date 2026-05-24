@@ -10,6 +10,10 @@
 
 PayloadTOON is a TypeScript npm package, CLI, API server, and developer dashboard that converts large JSON payloads into compact, schema-aware TOON format before sending data to AI models.
 
+## 📦 Installation
+
+[![npm version](https://badge.fury.io/js/payloadtoon.svg)](https://www.npmjs.com/package/payloadtoon)
+
 It helps reduce:
 
 - 💸 LLM input tokens
@@ -597,4 +601,4 @@ Built by **Ashish Kumar** 🚀
 
 ## 📄 License
 
-MIT
+This project is licensed under the [MIT License](https://github.com/ashish13377/payloadtoon?tab=MIT-1-ov-file)MIT
