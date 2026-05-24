@@ -1,0 +1,57 @@
+{
+  "contacts": [
+    {
+      "id": "C001",
+      "name": "Acme Corp",
+      "type": "company",
+      "industry": "Manufacturing",
+      "deal_value": 250000,
+      "stage": "negotiation",
+      "owner": "Alice Chen"
+    },
+    {
+      "id": "C002",
+      "name": "Beta LLC",
+      "type": "company",
+      "industry": "Software",
+      "deal_value": 180000,
+      "stage": "proposal",
+      "owner": "Bob Kumar"
+    },
+    {
+      "id": "C003",
+      "name": "Gamma Inc",
+      "type": "company",
+      "industry": "Finance",
+      "deal_value": 500000,
+      "stage": "closed-won",
+      "owner": "Carol Diaz"
+    },
+    {
+      "id": "C004",
+      "name": "John Doe",
+      "type": "individual",
+      "email": "john@example.com",
+      "last_contact": "2026-05-20",
+      "notes": "Follow up on Q3 renewal"
+    },
+    {
+      "id": "C005",
+      "name": "Jane Roe",
+      "type": "individual",
+      "email": "jane@example.com",
+      "last_contact": "2026-05-22",
+      "notes": "Interested in enterprise plan"
+    }
+  ],
+  "pipeline": {
+    "total_value": 930000,
+    "stages": {
+      "prospecting": 0,
+      "proposal": 180000,
+      "negotiation": 250000,
+      "closed-won": 500000,
+      "closed-lost": 0
+    }
+  }
+}

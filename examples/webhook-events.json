@@ -1,0 +1,57 @@
+{
+  "events": [
+    {
+      "id": "evt_001",
+      "type": "payment_intent.succeeded",
+      "source": "stripe",
+      "created": "2026-05-24T10:00:00Z",
+      "data": {
+        "amount": 4999,
+        "currency": "usd",
+        "customer": "cus_abc"
+      }
+    },
+    {
+      "id": "evt_002",
+      "type": "email.delivered",
+      "source": "resend",
+      "created": "2026-05-24T10:01:00Z",
+      "data": {
+        "to": "user@example.com",
+        "subject": "Welcome!"
+      }
+    },
+    {
+      "id": "evt_003",
+      "type": "subscription.created",
+      "source": "stripe",
+      "created": "2026-05-24T10:02:00Z",
+      "data": {
+        "plan": "pro",
+        "interval": "monthly",
+        "customer": "cus_abc"
+      }
+    },
+    {
+      "id": "evt_004",
+      "type": "email.bounced",
+      "source": "resend",
+      "created": "2026-05-24T10:03:00Z",
+      "data": {
+        "to": "invalid@nowhere.com",
+        "reason": "mailbox not found"
+      }
+    },
+    {
+      "id": "evt_005",
+      "type": "charge.refunded",
+      "source": "stripe",
+      "created": "2026-05-24T10:04:00Z",
+      "data": {
+        "amount": 1999,
+        "reason": "customer_request",
+        "charge": "ch_xyz"
+      }
+    }
+  ]
+}

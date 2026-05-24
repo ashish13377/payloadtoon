@@ -1,0 +1,53 @@
+{
+  "payroll_batch": "PAY-2026-05-15",
+  "processed": "2026-05-14T23:00:00Z",
+  "employees": [
+    {
+      "id": "E001",
+      "name": "Alice Chen",
+      "salary": 85000,
+      "bonus": 5000,
+      "tax_withheld": 18000,
+      "net_pay": 72000,
+      "department": "Engineering"
+    },
+    {
+      "id": "E002",
+      "name": "Bob Kumar",
+      "salary": 72000,
+      "bonus": 3000,
+      "tax_withheld": 15000,
+      "net_pay": 60000,
+      "department": "Design"
+    },
+    {
+      "id": "E003",
+      "name": "Carol Diaz",
+      "salary": 95000,
+      "bonus": 8000,
+      "tax_withheld": 22000,
+      "net_pay": 81000,
+      "department": "Management"
+    },
+    {
+      "id": "E004",
+      "name": "Dave Smith",
+      "salary": 65000,
+      "bonus": 0,
+      "tax_withheld": 12000,
+      "net_pay": 53000,
+      "department": "Support"
+    },
+    {
+      "id": "E005",
+      "name": "Eve Park",
+      "salary": 110000,
+      "bonus": 12000,
+      "tax_withheld": 28000,
+      "net_pay": 94000,
+      "department": "Engineering"
+    }
+  ],
+  "total_payroll": 427000,
+  "total_tax": 95000
+}
